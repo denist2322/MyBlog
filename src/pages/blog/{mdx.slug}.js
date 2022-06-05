@@ -3,6 +3,13 @@ import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../../components/Layout";
+import { MDXProvider } from "@mdx-js/react";
+import CodeBlock from "../../components/CodeBlock";
+
+const components = {
+  //코드 스타일링
+  code: CodeBlock,
+};
 
 const BlogPost = ({ data }) => {
   const image =
@@ -26,7 +33,9 @@ const BlogPost = ({ data }) => {
         </>
       )}
       <hr />
-      <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      <MDXProvider components={components}>
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      </MDXProvider>
     </Layout>
   );
 };

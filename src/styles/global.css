@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'GmarketSansBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html > body {
+font-family:'GmarketSansBold';
+text-underline-position:under;
+/* 텍스트 밑줄을 살짝 밑으로 내려줌 */
+}
